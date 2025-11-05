@@ -1,0 +1,7 @@
+<%- include('../layouts/main', { title: 'New Folder' }) %>
+
+<h2>Create Folder</h2>
+<form action="/folders/new" method="POST">
+  <input type="text" name="name" placeholder="Folder name" required />
+  <button type="submit" class="btn">Create</button>
+</form>

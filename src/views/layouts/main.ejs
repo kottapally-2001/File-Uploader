@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/header', { title }) %>
+  <body>
+    <%- include('../partials/navbar') %>
+    <main class="container">
+      <%- include('../partials/flash') %>
+      <%- body %> <!-- express-ejs-layouts injects page content here -->
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

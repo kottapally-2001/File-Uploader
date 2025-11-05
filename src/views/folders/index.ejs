@@ -1,0 +1,14 @@
+<%- include('../layouts/main', { title: 'Folders' }) %>
+
+<h2>Your Folders</h2>
+<a href="/folders/new" class="btn small">+ New Folder</a>
+<ul class="list">
+  <% folders.forEach(folder => { %>
+    <li>
+      <a href="/folders/<%= folder.id %>"><%= folder.name %></a>
+      <form action="/folders/<%= folder.id %>/delete" method="POST" class="inline-form">
+        <button type="submit" class="btn small danger">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>

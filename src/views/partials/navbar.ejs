@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <div class="nav-brand">📁 FileUploader</div>
+  <ul class="nav-links">
+    <% if (currentUser) { %>
+      <li>Welcome, <%= currentUser.email %></li>
+      <li><a href="/logout">Logout</a></li>
+    <% } else { %>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+    <% } %>
+  </ul>
+</nav>

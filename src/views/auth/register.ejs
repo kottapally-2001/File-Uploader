@@ -1,0 +1,12 @@
+<%- include('../partials/header', { title: 'Login' }) %>
+
+<section class="auth-card">
+  <h2>Register</h2>
+  <form action="/register" method="POST">
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <input type="password" name="password2" placeholder="Confirm Password" required />
+    <button type="submit" class="btn">Register</button>
+  </form>
+  <p>Already have an account? <a href="/login">Login</a></p>
+</section>

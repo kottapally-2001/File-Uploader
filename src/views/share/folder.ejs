@@ -1,0 +1,10 @@
+<%- include('../layouts/main', { title: 'Shared Folder' }) %>
+
+<h2>Shared Folder: <%= share.folder.name %></h2>
+<ul class="list">
+  <% share.folder.files.forEach(f => { %>
+    <li>
+      <a href="<%= f.uploadUrl %>" target="_blank"><%= f.name %></a>
+    </li>
+  <% }) %>
+</ul>

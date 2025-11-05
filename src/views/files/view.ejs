@@ -1,0 +1,30 @@
+<section class="file-view">
+  <h2><%= file.name %></h2>
+  <div class="file-meta">
+    <p><strong>Type:</strong> <%= file.mimeType || "Unknown" %></p>
+    <p><strong>Size:</strong> <%= (file.size / 1024).toFixed(2) %> KB</p>
+    <p><strong>Uploaded:</strong> <%= new Date(file.uploadAt).toLocaleString() %></p>
+  </div>
+
+  <div class="file-preview-container">
+    <% if (file.mimeType && file.mimeType.startsWith('image')) { %>
+      <img src="<%= file.uploadUrl %>" alt="<%= file.name %>" class="file-preview" />
+    <% } else if (file.mimeType && file.mimeType.startsWith('video')) { %>
+      <video controls class="file-preview">
+        <source src="<%= file.uploadUrl %>" type="<%= file.mimeType %>">
+        Your browser does not support the video tag.
+      </video>
+    <% } else if (file.mimeType && file.mimeType === 'application/pdf') { %>
+      <iframe src="<%= file.uploadUrl %>" class="file-preview"></iframe>
+    <% } else { %>
+      <a href="<%= file.uploadUrl %>" target="_blank" class="btn view-btn">Open File</a>
+    <% } %>
+  </div>
+
+  <div class="file-actions">
+  <form action="/files/<%= file.id %>/delete" method="POST" onsubmit="return confirm('Delete this file?')">
+    <button type="submit" class="btn delete-btn">Delete File</button>
+  </form>
+  <a href="/dashboard" class="btn small back-btn">⬅ Back</a>
+</div>
+</section>

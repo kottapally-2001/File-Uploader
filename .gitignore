@@ -1,0 +1,38 @@
+# 🧱 Node dependencies
+node_modules/
+
+# ⚙️ Environment variables
+.env
+.env.local
+.env.*.local
+
+# ⚡ Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 📦 Build output
+dist/
+build/
+coverage/
+
+# 🧠 Prisma
+prisma/dev.db
+prisma/*.sqlite
+prisma/*.sqlite-journal
+
+# 🧰 VSCode & IDE
+.vscode/
+.idea/
+*.swp
+
+# 🧪 OS Files
+.DS_Store
+Thumbs.db
+
+# 🔒 Backup or temp
+*.tmp
+*.log
+*.bak
+*.env.backup
