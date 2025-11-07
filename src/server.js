@@ -61,9 +61,7 @@ app.use((req, res, next) => {
 // ----- Routes (order matters) -----
 app.use('/', require('./routes/dashboard'));  // 👈 Must come before other routes
 app.use('/', require('./routes/auth'));
-app.use('/folders', require('./routes/folders'));
 app.use('/files', require('./routes/files'));
-app.use('/share', require('./routes/share'));
 
 // ----- Health Check -----
 app.get('/health', (_req, res) => {
